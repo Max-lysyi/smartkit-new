@@ -1,0 +1,13 @@
+.card-inf {
+  padding: 40px;
+  min-height: 400px;
+  &__section {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    &__title {
+      font-size: 35px;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+    
+}
+.wrapper {
+    width: 1300px;
+    margin: 0 auto;
+    font-family: 'Inter';
+    
+  
+}
+.light__bg {
+  background-color: var(--color-main-light);
+  width: 100%;
+}
+.footer__bg {
+  background-color: var(--color-footer);
+  width: 100%;
+}

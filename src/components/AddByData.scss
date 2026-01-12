@@ -1,0 +1,163 @@
+.add-form {
+  text-align: center;
+  margin: 50px;
+
+  h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: var(--color-word);
+  }
+  .input-group {
+    position: relative;
+  }
+  .date-input {
+    position: relative;
+
+    &:invalid::-webkit-datetime-edit {
+      color: transparent;
+    }
+
+    &:invalid::before {
+      content: "Вжити до...";
+      color: #666;
+      position: absolute;
+      left: 20px;
+      top: 14px;
+      font-size: 15px;
+
+      pointer-events: none;
+    }
+
+    &:focus::-webkit-datetime-edit,
+    &:valid::-webkit-datetime-edit {
+      color: inherit;
+    }
+
+    &:focus::before,
+    &:valid::before {
+      content: "";
+    }
+  }
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  input {
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid var(--color-main-dark);
+    border-radius: 10px;
+    background-color: transparent;
+    outline: none;
+    font-family: "Inter";
+  }
+  .comment-textarea {
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid var(--color-main-dark);
+    border-radius: 10px;
+    background-color: transparent;
+    outline: none;
+
+    field-sizing: content;
+    min-height: 85px;
+    resize: none;
+    overflow: hidden;
+  }
+  input[type="date"] {
+    font-family: "Inter";
+    color: #666;
+
+    &::-webkit-calendar-picker-indicator {
+      cursor: pointer;
+      opacity: 0.6;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  .form-btn {
+    background-color: var(--color-main-dark);
+    color: white;
+    border-radius: 30px;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: 0.3s;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+}
+
+.loading-indicator {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background: var(--color-main-light);
+  border: 1px solid var(--color-main-dark);
+  border-top: none;
+  font-size: 12px;
+  color: var(--color-main-par);
+  z-index: 9;
+}
+.suggestions-list {
+  position: absolute; 
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: var(--color-main-light);
+  border: 1px solid var(--color-main-dark);
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 100; 
+
+
+  max-height: 200px; 
+  overflow-y: auto; 
+
+  list-style: none;
+  margin-top: 5px;
+
+  li {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+
+    &:hover {
+      background-color: #f0fdf4;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  /* --- СТИЛІЗАЦІЯ СКРОЛБАРУ (Щоб було гарно) --- */
+  &::-webkit-scrollbar {
+    width: 8px; /* Ширина смуги */
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Колір фону смуги */
+    border-radius: 0 0 8px 0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #ccc; /* Колір повзунка */
+    border-radius: 4px;
+
+    &:hover {
+      background: #aaa; /* Колір при наведенні */
+    }
+  }
+}

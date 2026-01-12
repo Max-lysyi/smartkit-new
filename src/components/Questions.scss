@@ -1,0 +1,70 @@
+.ques__section {
+    width: 1400px;
+    margin: 0 auto;
+    padding: 100px 97px 80px 0;
+
+    .ques__title {
+    font-size: 45px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    }
+
+    .ques__list {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+
+        .ques__item {
+            background-color: var(--color-main-midl);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: background-color 0.3s ease;
+
+            .ques__item__header {
+                padding: 18px 24px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+                user-select: none;
+
+                .ques__item__header h3 {
+                    font-weight: 600;
+                }
+
+                .arrow {
+                    font-weight: bold;
+                    transition: transform 0.3s ease;
+                    display: inline-block;
+                }
+            }
+        }
+
+        .ques__item:hover {
+            background-color: #e0f0e6;
+        }
+    }
+}
+
+
+.ques__item__content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--color-main-midl);
+    padding: 0 24px;
+}
+
+.ques__item__content.show {
+  max-height: 500px;
+  opacity: 1;
+  padding-bottom: 20px;
+}
+
+.ques__item__content p {
+  font-size: 16px;
+  line-height: 1.5;
+
+  padding-top: 10px;
+}
