@@ -2,18 +2,19 @@
 
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/img/Subtract.svg";
+import Logo from "../assets/img/processed_image.png"
 
 
 import Modal from "./Modal";
 import RegisterForm from "./RegistrForm";
 import LoginForm from "./LoginForm";
+import DetailedPillIcon from "./Icons/Logo";
 import "./Header.scss";
 const Header = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [modalType, setModalType] = useState("register"); 
   return (
-    <div className="light__bg">
+    <div className="light__bg padings">
       <div className="wrapper">
         <header className="header">
           <section className="header__section">
@@ -22,8 +23,8 @@ const Header = () => {
                 {" "}
                 <img
                   className="header__section__first__logo"
-                  src={logo}
-                  alt="logo"
+                  src={Logo}
+                  alt=""
                 />
               </Link>
               <p className="header__section__first__par">M. E. D. I. C.</p>
@@ -49,6 +50,7 @@ const Header = () => {
                 >
                   Контакти
                 </a>
+                
               </nav>
             </div>
 

@@ -135,7 +135,7 @@ const MedicinesPage = () => {
   };
 
   return (
-    <div className="medicines-page">
+    <div className="medicines-page padings">
       <div className="wrapper">
         <div className="medicines-container">
           <h1 className="medicines-title">Мої ліки</h1>
@@ -192,7 +192,6 @@ const MedicinesPage = () => {
                   >
                     ×
                   </button>
-                  
                 </div>
               </div>
               <div className="card-footer">

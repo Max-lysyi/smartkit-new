@@ -1,6 +1,6 @@
 .add-form {
   text-align: center;
-  margin: 50px;
+  margin: 80px;
 
   h2 {
     font-size: 36px;
@@ -38,8 +38,7 @@
       content: "";
     }
   }
-}
-form {
+  form {
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -93,6 +92,8 @@ form {
     }
   }
 }
+}
+
 
 .loading-indicator {
   position: absolute;

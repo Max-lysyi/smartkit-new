@@ -1,18 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import "./RegistrForm.scss";
+import Modal from "./Modal"; 
+import ForgotPassword from "./ForgotPassword";
 
 const RegisterForm = ({ onSwitchToLogin }) => {
+
+  const [isForgotModalOpen, setIsForgotModalOpen] = useState(false);
+
   return (
     <div className="register-form">
       <h2>Реєстрація</h2>
       <form>
-        <input type="text" placeholder="Ім'я та Прізвище" />
         <input type="email" placeholder="Електронна пошта" />
 
         <div className="password-wrapper">
           <input type="password" placeholder="Пароль" />
           <i className="fa-regular fa-eye-slash"></i>
         </div>
+
+   
+        <span
+          className="lost-password-link"
+          onClick={() => setIsForgotModalOpen(true)}
+        >
+          Забули пароль?
+        </span>
 
         <div className="checkbox-group">
           <label>
@@ -28,9 +40,21 @@ const RegisterForm = ({ onSwitchToLogin }) => {
           Зареєструватися
         </button>
       </form>
+
       <p className="login-link">
         Вже маєте акаунт? <span onClick={onSwitchToLogin}>Увійти</span>
       </p>
+
+
+      {isForgotModalOpen && (
+        <Modal
+          isOpen={isForgotModalOpen}
+          onClose={() => setIsForgotModalOpen(false)}
+          transparentOverlay={true} 
+        >
+          <ForgotPassword onClose={() => setIsForgotModalOpen(false)} />
+        </Modal>
+      )}
     </div>
   );
 };

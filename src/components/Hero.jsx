@@ -6,13 +6,13 @@ import bgBlob from "../assets/img/bg.png";
 
 const Hero = () => {
   return (
-    <section className="main__section">
+    <section className="main__section padings">
       <div className="main__section__item">
         <h1 className="main__section__item__title">
-          Керуйте домашньою аптечкою розумно.
+          Medicine Expiry & Distribution Inventory Control
         </h1>
         <p className="main__section__item__par">
-          Відстежуйте терміни придатності та записуйте реакції на препарати в кілька кліків
+          Контроль інвентаризації, розподілу та термінів придатності ліків.
         </p>
         <Link to="/medicines" className="main__section__item__btn">
           Додати ліки

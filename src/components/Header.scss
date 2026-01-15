@@ -13,8 +13,8 @@ header {
             align-items: center;
 
             .header__section__first__logo{
-                width: 30px;
-                height: 30px;
+                width: 70px;
+                height: 70px;
             }
 
             .header__section__first__par {
@@ -29,6 +29,9 @@ header {
             .header__section__second__nav {
                 display: flex;
                 gap: 75px;
+                @media screen and (max-width: 1000px) {
+                    display: none;
+                }
 
                 .header__section__second__nav__item {
                     position: relative;

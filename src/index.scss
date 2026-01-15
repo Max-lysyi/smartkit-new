@@ -8,11 +8,17 @@ body {
     
 }
 .wrapper {
-    width: 1300px;
+    max-width: 1300px;
     margin: 0 auto;
     font-family: 'Inter';
     
   
+}
+.padings {
+  padding: 0 16px 0 16px;
+  @media screen and (max-width:768px){
+    padding: 0 32px 0 32px;
+  }
 }
 .light__bg {
   background-color: var(--color-main-light);

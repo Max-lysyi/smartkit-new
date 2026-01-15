@@ -1,5 +1,6 @@
 import React from "react";
 import "./DounloadApp.scss";
+import { motion } from "framer-motion";
 
 import appStoreBtn from "../assets/img/App Store.png";
 import googlePlayBtn from "../assets/img/Google Play.png";
@@ -7,6 +8,14 @@ import phoneMockup from "../assets/img/processed_image (10).png";
 
 const DounloadApp = () => {
   return (
+    <motion.div
+      id="comment"
+      initial={{ opacity: 0, y: 200 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 2.0 }}
+      viewport={{ once: true }}
+      className="feature-card"
+    >
     <section className="download-container">
       <div className="download-card">
         <div className="download-content">
@@ -35,6 +44,7 @@ const DounloadApp = () => {
         <div className="star star-2">✦</div>
       </div>
     </section>
+    </motion.div>
   );
 };
 

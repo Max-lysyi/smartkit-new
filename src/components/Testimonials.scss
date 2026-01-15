@@ -1,22 +1,43 @@
-
+@use "../styles/variables" as *;
 .comments__section {
-  margin-bottom: 100px;
-  height: 50vh;
-
+  height: 100vh;
+  gap: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+@media screen and (max-width: 850px) {
+       height: auto;
+    }
   .comments__section__title {
-    margin: 100px 0;
-    font-size: 50px;
+    font-size: 60px;
     text-align: center;
   }
 
   .comments__section__box {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    gap: 10px;
+    :nth-child(7) {
+    grid-column: 1 / -1; 
+    justify-self: center; 
+
+    width: 100%; 
+    max-width: 400px; 
+  }
+    @media screen and (max-width: 1200px) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media screen and (max-width: 850px) {
+      grid-template-columns: 1fr;
+    }
 
     .comments__section__box__item {
       width: 350px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
 
       .comments__section__box__item__coment {
         border-radius: 13px;
@@ -53,7 +74,7 @@
 
         .comments__section__box__item__content__info {
           display: flex;
-          flex-direction: column;          
+          flex-direction: column;
           margin: 18px 0 0 8px;
 
           .comments__section__box__item__content__info__par:first-child {
